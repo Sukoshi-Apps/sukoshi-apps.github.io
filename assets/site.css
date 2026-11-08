@@ -1,0 +1,220 @@
+/* Sukoshi website styles. Colours mirror the app's src/constants/theme.ts. No red anywhere. */
+
+@font-face {
+  font-family: 'Inter';
+  src: url('fonts/inter-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('fonts/inter-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Zen Maru Gothic';
+  src: url('fonts/zen-maru-gothic-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Zen Maru Gothic';
+  src: url('fonts/zen-maru-gothic-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  --ai-indigo: #2f4b7c;
+  --moss: #3e6a4b;
+  --sumi-ink: #1c2530;
+  --ink-muted: rgba(28, 37, 48, 0.72);
+  --kinari-sand: #e6d5b0;
+  --mist: #e4e9f2;
+  --paper: #f3f4f1;
+  --white: #ffffff;
+  --ochre-text: #7f6128;
+  --ochre-sand: #f6f0e1;
+  --font-heading: 'Zen Maru Gothic', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', 'Zen Maru Gothic', system-ui, sans-serif;
+  --gutter: 16px;
+  --measure: 40rem;
+  --radius: 12px;
+  --touch: 48px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--sumi-ink);
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--gutter);
+  top: -100px;
+  background: var(--ai-indigo);
+  color: var(--white);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  z-index: 10;
+}
+.skip-link:focus { top: var(--gutter); }
+
+.wrap {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* Header */
+.site-header {
+  background: var(--white);
+  border-bottom: 1px solid var(--mist);
+}
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 64px;
+  flex-wrap: wrap;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: var(--touch);
+  color: var(--sumi-ink);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.35rem;
+}
+.brand img { width: 36px; height: 36px; }
+.brand .jp {
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-weight: 500;
+  color: var(--ink-muted);
+  font-size: 1rem;
+}
+.site-nav { display: flex; gap: 0.25rem; flex-wrap: wrap; }
+.site-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--touch);
+  padding: 0 0.75rem;
+  border-radius: var(--radius);
+  color: var(--ai-indigo);
+  font-weight: 600;
+  text-decoration: none;
+}
+.site-nav a:hover { background: var(--mist); }
+.site-nav a[aria-current='page'] { background: var(--mist); }
+
+/* Content */
+main { padding: 2rem 0 3rem; }
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--sumi-ink);
+}
+h1 { font-size: 2.25rem; margin: 0 0 0.5rem; }
+h2 { font-size: 1.35rem; margin: 2.25rem 0 0.5rem; }
+p { margin: 0 0 1rem; }
+
+.tagline {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: var(--ai-indigo);
+  margin-bottom: 1.5rem;
+}
+.effective { color: var(--ink-muted); }
+
+ul { padding-left: 1.25rem; margin: 0 0 1rem; }
+li { margin: 0.35rem 0; }
+
+.promises {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+.promises li {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--mist);
+  border-radius: var(--radius);
+  padding: 0.9rem 1rem 0.9rem 2.6rem;
+  margin: 0.6rem 0;
+}
+.promises li::before {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  top: 1.35rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: var(--kinari-sand);
+  border: 2px solid var(--ai-indigo);
+}
+
+/* A quiet label, not a button: it isn't tappable, so it mustn't look like it is. */
+.coming-soon {
+  display: inline-block;
+  color: var(--ai-indigo);
+  font-weight: 600;
+  border-left: 4px solid var(--kinari-sand);
+  padding: 0.2rem 0 0.2rem 0.75rem;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.notice {
+  background: var(--mist);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  margin: 1.5rem 0;
+}
+
+a { color: var(--ai-indigo); text-underline-offset: 0.15em; }
+a:focus-visible, .site-nav a:focus-visible, .brand:focus-visible {
+  outline: 3px solid var(--ai-indigo);
+  outline-offset: 2px;
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--mist);
+  background: var(--white);
+  color: var(--ink-muted);
+  font-size: 0.95rem;
+  padding: 1.5rem 0 2rem;
+}
+.site-footer p { margin: 0 0 0.5rem; }
+.site-footer a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--touch);
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.9rem; }
+  body { font-size: 1rem; }
+}
