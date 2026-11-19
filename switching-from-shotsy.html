@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Switching from Shotsy · Sukoshi</title>
+  <meta name="description" content="How to bring your history from Shotsy, or from a spreadsheet, into Sukoshi.">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="icon" href="assets/sukoshi-icon.svg" type="image/svg+xml">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html"><img src="assets/sukoshi-mark.svg" alt="" width="36" height="36">Sukoshi <span class="jp" lang="ja">少し</span></a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="privacy-policy.html">Privacy policy</a>
+        <a href="terms.html">Terms of use</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="wrap">
+      <h1>Bring your history from another app</h1>
+      <p>Sukoshi can read a file you've exported from another tracker and add what it finds to your journal: doses, weigh-ins, symptoms and notes. It's free, and the file is read on your phone only. Nothing is sent anywhere.</p>
+      <p>Shotsy is another company's app. Sukoshi isn't connected to it, and Shotsy hasn't checked or approved this page.</p>
+
+      <h2>Switching from Shotsy</h2>
+      <ol>
+        <li>In Shotsy, export your history as a CSV file and save it to your phone (for example to Downloads). Don't open it in a spreadsheet first: a spreadsheet can change how the dates are written.</li>
+        <li>In Sukoshi, choose <strong>Bring your history from another app</strong> on the welcome screen, or <strong>Your data › Import from another app</strong> if you already keep a journal.</li>
+        <li>If you already keep a journal, Sukoshi asks you to save a Data Passport first, so you can always go back.</li>
+        <li>Choose the file. Sukoshi shows what it found, and nothing is saved yet. You tell it how you take your medicine, your usual day and time and your current prescribed dose: none of that is taken from the file.</li>
+        <li>Tap <strong>Import</strong>. Everything goes in together, or nothing does.</li>
+      </ol>
+      <h3>What comes across</h3>
+      <ul>
+        <li>Doses in mg, with their date, time and site. Amounts in other units (mL, units, clicks) are kept as a note on their day and never converted.</li>
+        <li>Weigh-ins, when the weight column says kg or lb. Weigh-ins in other units can't come in yet.</li>
+        <li>Side effects, as symptoms on their day. Sukoshi doesn't set a strength from the file; the file's numbers are kept in that day's note.</li>
+        <li>Day notes, as notes for your appointment.</li>
+      </ul>
+      <p>The medicine's name in the file is never used. Weeks with no dose in the file are never counted as missed.</p>
+
+      <h2>A simple spreadsheet</h2>
+      <p>You can also bring in your own records from a spreadsheet saved as CSV. Use one row per entry, with these column headings in the first row:</p>
+      <table>
+        <thead><tr><th>Heading</th><th>What goes in it</th></tr></thead>
+        <tbody>
+          <tr><td>date</td><td>The day, written year-month-day: 2026-01-31</td></tr>
+          <tr><td>time</td><td>Optional. The time of the dose, 24-hour: 08:30</td></tr>
+          <tr><td>medicine</td><td>Optional. Only used to tell two medicines apart; Sukoshi never shows it.</td></tr>
+          <tr><td>dose_mg</td><td>The dose in mg, for example 2.5</td></tr>
+          <tr><td>site</td><td>Optional. Left arm, Right arm, Left belly, Right belly, Left thigh or Right thigh</td></tr>
+          <tr><td>weight</td><td>Optional. A weigh-in</td></tr>
+          <tr><td>unit</td><td>kg or lb, for the weight in that row</td></tr>
+          <tr><td>note</td><td>Optional. A note for that day</td></tr>
+        </tbody>
+      </table>
+      <p>A row can hold a dose, a weigh-in, or both.</p>
+
+      <h2>Your own CSV export from Sukoshi</h2>
+      <p>Sukoshi's own CSV export is several files, one for each kind of entry. Choose them all at once and Sukoshi reads the doses, weigh-ins, symptoms and notes. To move a whole journal to a new phone, use a Data Passport instead.</p>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Privacy policy: see the <a href="privacy-policy.html">Privacy policy page</a>. · <a href="terms.html">Terms of use</a></p>
+      <p>Contact: <a href="mailto:sukoshijournal@gmail.com">sukoshijournal@gmail.com</a></p>
+      <p>Sukoshi is made by Dare 2 Thread Ltd, a company registered in England and Wales, company number 12931577. Registered office: 25 Beechcroft Avenue, Birmingham, England, B28 9ER.</p>
+    </div>
+  </footer>
+</body>
+</html>
