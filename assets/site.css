@@ -117,7 +117,7 @@ body {
   display: inline-flex;
   align-items: center;
   min-height: var(--touch);
-  padding: 0 0.75rem;
+  padding: 0 0.5rem;
   border-radius: var(--radius);
   color: var(--ai-indigo);
   font-weight: 600;
